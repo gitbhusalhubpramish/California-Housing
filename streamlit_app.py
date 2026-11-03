@@ -73,10 +73,20 @@ f'''
 </div>
 </div>
 ''',
-height = 810,
+height = 802,
 scrolling =True
 )
 
 st.download_button(label="Download tree", data = svg, file_name=f"decisiontree.svg", mime="image/svg+xml")
 
+st.write('''## loss''')
+st.write('''This is a regression model so it doesn't have accuracy but loss. we use MSE which looks like:''')
+st.write('''$$
+MSE = \sum (\hat{y} - y)^2
+$$''')
 
+st.write('''**where**''')
+st.write('''- $\hat{y}$ is the predicted result''')
+st.write('''- $y$ is the true data''')
+
+st.line_chart(error["mse"])
