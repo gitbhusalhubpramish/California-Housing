@@ -80,3 +80,5 @@ st.download_button(label="Download tree", data = svg, file_name=f"decisiontree.s
 
 st.write("nodes:", len(re.findall(r'class="node"', svg.decode("utf-8"))))
 st.write("sizes:", len(svg)/1024)
+st.write("dn:", len(re.findall(r'^\s*\d+\s*\[label', dot, re.M)))
+
