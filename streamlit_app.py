@@ -7,7 +7,7 @@ path = kagglehub.dataset_download("camnugent/california-housing-prices", "housin
 
 df = pd.read_csv(path)
 
-x,y = df[["mdeian_income", "total_rooms", "housing_median_age"]], df["median_house_value"]
+x,y = df[["median_income", "total_rooms", "housing_median_age"]], df["median_house_value"]
 
 xtrain, xtest, ytriain, ytest = train_test_split(x,y,test_size=0.2, random_state=42)
 
