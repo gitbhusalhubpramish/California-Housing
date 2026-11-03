@@ -60,10 +60,9 @@ def build_graph(root):
 				traverse(child, child_id)
 
 	traverse(root)
-	return "digraph Tree{" + "\n".join(graph) + "}"
+	return "digraph Tree{\n graph [rankdir=TB, dpi=150, nodesep=0.5, ranksep=0.7];" + "\n".join(graph) + "}"
 
 graph = graphviz.Source(build_graph(tree))
-graph.graph_attr.update(rankdir="TB", dpi="150", nodesep="0.5", ranksep="0.7")
 st.graphviz_chart(graph, use_container_width=True)
 svg = graph.pipe(format="svg")
 st.download_button(label="Download tree", data = svg, file_name=f"decisiontree.svg", mime="image/svg+xml")
