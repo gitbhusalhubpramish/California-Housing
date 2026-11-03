@@ -44,7 +44,7 @@ error = pd.read_csv("error.csv")
 
 def build_graph(root):
 	graph = []
-	def traverse(node, node_id=0)::
+	def traverse(node, node_id=0):
 		nonlocal graph
 		if node is None:
 			return
