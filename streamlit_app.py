@@ -71,6 +71,8 @@ f'''
 <div style="width:max-content; height: max-content;">
 {svg}
 </div>
+end
+</div>
 ''',
 height = 820,
 scrolling =True
