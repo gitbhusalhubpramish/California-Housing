@@ -69,7 +69,7 @@ f'''
 <div style="width=100%; height:800px; overflow:auto;">
 {svg.decode("utf-8")}
 </div>
-'''
+''',
 height = 820,
 scrolling =True
 )
