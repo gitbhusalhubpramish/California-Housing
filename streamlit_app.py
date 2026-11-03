@@ -52,7 +52,7 @@ def build_graph(root):
 		if node.value is not None:
 			graph.append(f'{node_id} [label = "predict: {node.value}"]')
 			return
-		graph.append(f'{node_id} [label="X[{node.feature}]>=node.tresold:.3f"];')
+		graph.append(f'{node_id} [label="X[{node.feature}]>={node.tresold:.3f}"];')
 
 		for child, child_id, label in [(node.left, 2*node_id+1, "True"), (node.right, 2*node_id+2, "False")]:
 			if child:
@@ -62,10 +62,9 @@ def build_graph(root):
 	traverse(root)
 	return "digraph Tree{" + "\n".join(graph) + "}"
 
-graph = build_graph(tree)
-
-st.graphviz_chart(graph)
-dot = graphviz.Source(graph)
-svg = dot.pipe(format="svg")
+graph = graphviz.Source(build_graph(tree))
+graph.graph_attr.update(rankdir="TB", dpi="150", nodesep="0.5", ranksep="0.7")
+st.graphviz_chart(graph, use_container_width=True)
+svg = graph.pipe(format="svg")
 st.download_button(label="Download tree", data = svg, file_name=f"decisiontree.svg", mime="image/svg+xml")
 
