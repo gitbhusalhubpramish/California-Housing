@@ -63,7 +63,7 @@ def build_graph(root):
 	return """digraph Tree{\n graph [rankdir=TB, dpi=150, nodesep=0.1, ranksep=0.1, fontsize=5, size="", pad=0.2]; node [fontsize=2 width=0.2, height=0.1, margin=0 fixedsize=false]; edge [fontsize=2 arrowsize=0.1];""" + "\n".join(graph) + "}"
 
 graph = graphviz.Source(build_graph(tree))
-svg = graph.pipe(format="svg").decode("utf-8")
+svg = graph.pipe(format="svg")
 st.components.v1.html(
 f'''
 <div style="width:100%; height:800px; overflow:auto;">
