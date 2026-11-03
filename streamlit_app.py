@@ -31,9 +31,9 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 path = os.path.join(BASE_DIR, "tree.pkl")
 
 class Node:
-	def __init__(self, feature=None, treshold=None, left=None, right=None, value=None):
-		self.feature= featrue
-		self.treshold = treshold
+	def __init__(self, feature=None, trashold=None, left=None, right=None, value=None):
+		self.feature= feature
+		self.trashold = treshold
 		self.left= left
 		self.right = right
 		self.value = value
