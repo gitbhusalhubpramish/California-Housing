@@ -60,7 +60,7 @@ def build_graph(root):
 				traverse(child, child_id)
 
 	traverse(root)
-	return "digraph Tree{\n graph [rankdir=TB, dpi=150, nodesep=0.1, ranksep=0.3, fontsize=5]; node [fontsize=2 width=0.2, height=0.1]; edge [fontsize=2 arrowsize=0.5];" + "\n".join(graph) + "}"
+	return "digraph Tree{\n graph [rankdir=TB, dpi=150, nodesep=0.1, ranksep=0.3, fontsize=5]; node [fontsize=2 width=0.2, height=0.1, margin=0]; edge [fontsize=2 arrowsize=0.5];" + "\n".join(graph) + "}"
 
 graph = graphviz.Source(build_graph(tree))
 svg = graph.pipe(format="svg")
