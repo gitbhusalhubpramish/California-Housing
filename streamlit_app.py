@@ -89,4 +89,6 @@ st.write('''**where**''')
 st.write('''- $\hat{y}$ is the predicted result''')
 st.write('''- $y$ is the true data''')
 
+st.write('''The loss of tree with different loss(1-10) is:''')
+
 st.line_chart(error["mse"])
