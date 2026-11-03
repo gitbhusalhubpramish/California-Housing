@@ -71,16 +71,12 @@ f'''
 <div style="width:max-content; height: max-content;">
 {svg}
 </div>
-end
 </div>
 ''',
-height = 820,
+height = 810,
 scrolling =True
 )
 
 st.download_button(label="Download tree", data = svg, file_name=f"decisiontree.svg", mime="image/svg+xml")
 
-st.write("nodes:", len(re.findall(r'class="node"', svg)))
-st.write("sizes:", len(svg)/1024)
-st.write("dn:", len(re.findall(r'^\s*\d+\s*\[label', build_graph(tree), re.M)))
 
