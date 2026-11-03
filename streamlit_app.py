@@ -65,6 +65,7 @@ def build_graph(root):
 graph = build_graph(tree)
 
 st.graphviz_chart(graph)
+dot = graphviz.Source(graph)
 svg = dot.pipe(format="svg")
 st.download_button(label="Download tree", data = svg, file_name=f"decisiontree.svg", mime="image/svg+xml")
 
