@@ -4,6 +4,7 @@ from sklearn.model_selection import train_test_split
 import streamlit as st
 import pickle
 import os
+import graphviz
 
 path = kagglehub.dataset_download("camnugent/california-housing-prices", "housing.csv")
 
@@ -38,7 +39,7 @@ class Node:
 		self.value = value
 
 with open("tree.pkl", "rb") as f:
-	forest = pickle.load(f)
+	tree = pickle.load(f)
 error = pd.read_csv("error.csv")
 
 def build_graph(root):
@@ -61,4 +62,9 @@ def build_graph(root):
 	traverse(root)
 	return "digraph Tree{" + "\n".join(graph) + "}"
 
+graph = build_graph(tree)
+
+st.graphviz_chart(graph)
+svg = dot.pipe(format="svg")
+st.download_button(label="Download tree", data = svg, file_name=f"decisiontree.svg", mime="image/svg+xml")
 
