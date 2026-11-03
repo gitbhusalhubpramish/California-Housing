@@ -16,7 +16,7 @@ st.write('''This project uses [California Housing] dataset in kaggle. The datase
 st.write('''- Total rows(data)''', len(df))
 st.write('''- Median house value(output) range''', f"{min(y)} - {max(y)}")
 st.write('''- Training sampe''', len(xtrain))
-st.write('''- Testing sample''', len(len(xtest)))
+st.write('''- Testing sample''', len(xtest))
 
 st.write('''## Algorithm''')
 st.write('''This uses decision tree to predict output. Decision tree is like a tree where it compares a feature with a trashold on and on untill it reach to the leaf(prediction point)''')
