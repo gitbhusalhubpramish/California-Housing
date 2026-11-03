@@ -70,6 +70,8 @@ f'''
 {svg.decode("utf-8")}
 </div>
 '''
+height = 820,
+scrolling =True
 )
 
 st.download_button(label="Download tree", data = svg, file_name=f"decisiontree.svg", mime="image/svg+xml")
