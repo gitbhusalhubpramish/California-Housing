@@ -40,3 +40,25 @@ class Node:
 with open("tree.pkl", "rb") as f:
 	forest = pickle.load(f)
 error = pd.read_csv("error.csv")
+
+def build_graph(root):
+	graph = []
+	def traverse(node, node_id=0)::
+		nonlocal graph
+		if node is None:
+			return
+
+		if node.value is not None:
+			graph.append(f'{node_id} [label = "predict: {node.value}"]')
+			return
+		graph.append(f'{node_id} [label="X[{node.feature}]>=node.tresold:.3f"];')
+
+		for child, child_id, label in [(node.left, 2*node_id+1, "True"), (node.right, 2*node_id+2, "False")]:
+			if child:
+				graph.append(f'{node_id}-> {child_id} [label="{label}"];')
+				traverse(child, child_id)
+
+	traverse(root)
+	return "digraph Tree{" + "\n".join(graph) + "}"
+
+
