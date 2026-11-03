@@ -63,7 +63,14 @@ def build_graph(root):
 	return "digraph Tree{\n graph [rankdir=TB, dpi=150, nodesep=0.5, ranksep=0.7];" + "\n".join(graph) + "}"
 
 graph = graphviz.Source(build_graph(tree))
-st.graphviz_chart(graph, use_container_width=True)
 svg = graph.pipe(format="svg")
+st.components.v1.html(
+f'''
+<div style="width=100%; height:800px; overflow:auto;">
+{svg.decode("utf-8")}
+</div>
+'''
+)
+
 st.download_button(label="Download tree", data = svg, file_name=f"decisiontree.svg", mime="image/svg+xml")
 
