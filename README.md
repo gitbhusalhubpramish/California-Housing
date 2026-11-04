@@ -33,7 +33,7 @@ This project uses python liberies used for datascience - Visulization, calculati
 
 The workflow of the project is divided into 2 catogary:
 
-## Kaggle side(training):
+### Kaggle side(training):
 
 First I'd train the trees in data by building algorithm from scratch in kaggle jupiter notebook. The flow looks like this:
 
@@ -59,4 +59,15 @@ After training we show the preview of the model in streamlit app. The flow looks
 
 *Most of the training stuff is done in kaggle side streamlit is just he preview*
 
+## So, What did I learn?
 
+I had made thsi project to learn Decision tree form scratch. Ofcource I had learnt this:) but other stuff like:
+
+- Decision Tree
+- Splits
+- Impurity
+- GPU Parellelization
+
+## Some extra info...
+
+I have been learning Meachine learning from scratch so I make notes and make atleast one project for each algorithm. I have writtern a jupiter notebook to plan and make this work then I make a python script file with the help of streamlit so that I can host and support hackclub. Most of the progress of learning the algorithm is in my notebook(coding time only) while I struggled a lot to research about the algo and gpu acceration since it was my first gpu bashed project. I made this to learn so it ahs very less AI applied. Since, this proect requires GPU so I trained and designed the algorithm in kaggle then exported the model. This project may seem like rendering project but it's really a AI model project.
