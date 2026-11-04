@@ -42,7 +42,7 @@ First I'd train the trees in data by building algorithm from scratch in kaggle j
 - **Impurity/best split:** The impurity is calculated in each possible treshold through MSE using this formula then select the purist data(with higest split score):
 
 $$
-split score = \frac{n_left}{n_total} MSE(left) + frac{n_right}{n_total} MSE(right)
+split score = \frac{n_{left}}{n_{total}} MSE(left) + \frac{n_{right}}{n_{total}} MSE(right)
 $$
 
 - **repeat:** repeat the split(score)/impurity untill you reach to the max depth or no split possible - simplly return the mean of the data in leaf.
