@@ -19,4 +19,14 @@ This project was made by me to understand Decision tree form scratch so it has d
 - decision tree visulization
 - trained in kaggle environment
 
+## Tech-Stack
+
+This project uses python liberies used for datascience - Visulization, calculation and data manipulation. I've used:
+
+- Numpy for calculation
+- Streamlit and graphviz for data visulization and preview
+- cupy for GPU bashed parellel processing
+- Pandas for data manipulation
+- sk-learn for datasplit
+
 
