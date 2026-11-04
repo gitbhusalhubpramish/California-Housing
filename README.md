@@ -29,4 +29,34 @@ This project uses python liberies used for datascience - Visulization, calculati
 - Pandas for data manipulation
 - sk-learn for datasplit
 
+## Work-flow
+
+The workflow of the project is divided into 2 catogary:
+
+## Kaggle side(training):
+
+First I'd train the trees in data by building algorithm from scratch in kaggle jupiter notebook. The flow looks like this:
+
+- **Data fetch:** First data is initilized from the kaggle dataset to training environment.
+- **Data Split:** Here the data is splited into 2(4) parts for training and testing for each with x and y.
+- **Impurity/best split:** The impurity is calculated in each possible treshold through MSE using this formula then select the purist data(with higest split score):
+
+$$
+split score = \frac{n_left}{n_total} MSE(left) + frac{n_right}{n_total} MSE(right)
+$$
+
+- **repeat:** repeat the split(score)/impurity untill you reach to the max depth or no split possible - simplly return the mean of the data in leaf.
+- **Build tree:** Each repitation build a node and branches of tree we store feature, treshold, left and right node for spliting nodes while value for leaf and store that.
+- **running/testing:** we simpilly run the testing data from build tree.
+- **Export:** Since training model in streamlit server is expencive and requires gpu so we train model in kaggle environment and export model in `"tree.pkl"` and error in `"error.csv"`.
+
+### Streamlit side(Preview):
+
+After training we show the preview of the model in streamlit app. The flow looks like this:
+
+- **Fetch data:** Here we fetch data from kaggle dataset and initilze the trained parameter.
+- **Visulization:** This app visulizes the tree using `graphviz` and plots the loss of the model in different depth.
+
+*Most of the training stuff is done in kaggle side streamlit is just he preview*
+
 
